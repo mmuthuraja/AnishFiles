@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title> Quiz to know about me!</title>
+		<script language="javascript">
+			function validateForm(){
+				var q1 = getObjectValue("q1a1");
+				var q2 = getObjectValue("q2a2");
+				var q3 = getObjectValue("q3a3");
+				var q4 = getObjectValue("q4a2") || getObjectValue("q4a3");
+				var q5 = getObjectValue("q5a3");
+				hideResult("q1r");hideResult("q2r");hideResult("q3r");hideResult("q4r");hideResult("q5r");
+				hideResult("q1w");hideResult("q2w");hideResult("q3w");hideResult("q4w");hideResult("q5w");
+
+				if(q1) showResult("q1r"); else showResult("q1w");
+				if(q2) showResult("q2r"); else showResult("q2w");
+				if(q3) showResult("q3r"); else showResult("q3w");
+				if(q4)	showResult("q4r"); else showResult("q4w");
+				if(q5)	showResult("q5r"); else showResult("q5w");
+			}
+			function getObjectValue(oId){
+				return document.getElementById(oId).checked;
+			}
+			function showResult(code){
+				document.getElementById(code).style.display="";
+			}
+			function hideResult(code){
+				document.getElementById(code).style.display="none";
+			}
+		</script>
+	</head>
+	<body>
+	<form id="quiz" name="quiz">
+		<h1>Quiz to know about me!</h1>
+		<h3> (try to answer as much as possible)</h3>
+		<UL>
+			<LI> <b>Question 1</b>: Who is my favorite author? <span id="q1r" style="display:none;"><font color="green">✔</font></span> <span id="q1w" style="display:none;"><font color="red">✘</font></span>
+					<ul type="a">
+						<li><input type="radio" name="q1" id="q1a1" value="RR"><label for="q1a1">Rick Riordan</label></li>
+						<li><input type="radio" name="q1" id="q1a2" value="AK"><label for="q1a2">Anish Kumar</label></li>
+						<li><input type="radio" name="q1" id="q1a3" value="JF"><label for="q1a3">JFK Rowlley</label></li>
+					</ul>
+					<br>
+			</LI>
+			<li> <b>Question 2:</b>: What is my favorite car? <span id="q2r" style="display:none;"><font color="green">✔</font></span> <span id="q2w" style="display:none;"><font color="red">✘</font></span>
+					<ul type="a">
+						<li><input type="radio" name="q2" id="q2a1" value="BZ"><label for="q2a1">Benz</label></li>
+						<li><input type="radio" name="q2" id="q2a2" value="FF"><label for="q2a2">Ferrari LaFerrari</label></li>
+						<li><input type="radio" name="q2" id="q2a3" value="HY"><label for="q2a3">Hyundai</label></li>
+					</ul>
+					<br>
+			</li>
+			<li> <b>Question 3:</b>: Where is Rick Riordan live right now? <span id="q3r" style="display:none;"><font color="green">✔</font></span> <span id="q3w" style="display:none;"><font color="red">✘</font></span>
+					<ul type="a">
+						<li><input type="radio" name="q3" id="q3a1" value="NJ"><label for="q3a1">New Jersey</label></li>
+						<li><input type="radio" name="q3" id="q3a2" value="LV"><label for="q3a2">Las Vegas</label></li>
+						<li><input type="radio" name="q3" id="q3a3" value="BS"><label for="q3a3">Boston</label></li>
+					</ul>
+					<br>
+			</li>
+			<li> <b>Question 4:</b>: How many people do I have in my family? <span id="q4r" style="display:none;"><font color="green">✔</font></span> <span id="q4w" style="display:none;"><font color="red">✘</font></span>
+					<ul type="a">
+						<li><input type="radio" name="q4" id="q4a1" value="5"><label for="q4a1">Five (5)</label></li>
+						<li><input type="radio" name="q4" id="q4a2" value="3"><label for="q4a2">Three (3)</label></li>
+						<li><input type="radio" name="q4" id="q4a3" value="4"><label for="q4a3">Four (4)</label></li>
+					</ul>
+					<br>
+			</li>
+			<li> <b>Question 5:</b>: How much computer coding languages do I know? <span id="q5r" style="display:none;"><font color="green">✔</font></span> <span id="q5w" style="display:none;"><font color="red">✘</font></span>
+					<ul type="a">
+						<li><input type="radio" name="q5" id="q5a1" value="1"><label for="q5a1">One (1)</label></li>
+						<li><input type="radio" name="q5" id="q5a2" value="2"><label for="q5a2">Two (2)</label></li>
+						<li><input type="radio" name="q5" id="q5a3" value="3"><label for="q5a3">Three (3)</label></li>
+					</ul>
+					<br>
+			</li>
+		</UL>
+		<input type="button" value="Submit" onclick="javascript:validateForm();"> 
+		<input type="reset" value="Start Fresh One">
+	</form>
+	</body>
+</html>
